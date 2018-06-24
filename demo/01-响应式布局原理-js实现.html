@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 1200px;
+      height: 500px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+
+  </style>
+</head>
+<body>
+
+<!--
+1. 超小屏幕: 0-768px 需求: 背景绿色 宽度 100%
+2. 小屏设备: 768px-992px 需求: 背景蓝色 版心: 750px
+3. 中屏设备: 992px-1200px 需求: 背景是黄色, 版心: 970px
+4. 大屏设备: 1200~ 需求: 背景颜色是粉色, 版心: 1170px
+要求: 通过 js 实现
+-->
+<div class="container"></div>
+<script>
+  var container = document.querySelector(".container");
+
+  function responsive() {
+    // 可视区域大小获取
+    var pageWidth = window.innerWidth;
+    console.log( pageWidth );
+
+    if ( pageWidth < 768 ) {
+      // 0 - 768, 超小屏
+      container.style.backgroundColor = "green";
+      container.style.width = "100%";
+    }
+    else if ( pageWidth < 992 ) {
+      // 768 - 992, 小屏
+      container.style.backgroundColor = "blue";
+      container.style.width = "750px";
+    }
+    else if ( pageWidth < 1200 ) {
+      // 992 - 1200 中屏
+      container.style.backgroundColor = "yellow";
+      container.style.width = "970px";
+    }
+    else {
+      // 超过 1200 大屏
+      container.style.backgroundColor = "pink";
+      container.style.width = "1170px";
+    }
+  }
+
+  // 一进入页面, 调用一次
+  responsive();
+  window.addEventListener("resize", responsive);
+
+
+
+</script>
+
+</body>
+</html>

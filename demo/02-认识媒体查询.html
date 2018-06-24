@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 1200px;
+      height: 500px;
+      background-color: #ccc;
+      margin: 0 auto;
+    }
+    /* @media screen and 条件 and 条件 ... */
+    /* 媒体查询可以针对不同大小屏幕设置样式  */
+    /* 1. min-width: 最小宽度, 只要大于等于这个宽度, 样式就生效 */
+    /* 2. max-width: 最大宽度, 只要小于等于这个宽度, 样式就生效 */
+    /* 3. width: 等于这个宽度的时候生效 */
+
+
+    /*@media screen and ( min-width: 500px ) {*/
+      /*.container {*/
+        /*background-color: yellow;;*/
+      /*}*/
+    /*}*/
+
+    /*@media screen and ( max-width: 800px ) {*/
+      /*.container {*/
+        /*background-color: yellow;;*/
+      /*}*/
+    /*}*/
+
+    /* 在 600 - 1000 范围内, 盒子显示成蓝色 */
+    /*@media screen and ( min-width: 600px ) and ( max-width: 1000px ) {*/
+      /*.container {*/
+        /*background-color: blue;*/
+      /*}*/
+    /*}*/
+
+    @media screen and ( width: 800px ) {
+      .container {
+        background-color: green;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="container"></div>
+
+</body>
+</html>
